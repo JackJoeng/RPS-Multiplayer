@@ -98,12 +98,12 @@ var config = {
   });
   
   database.ref("/chatbox").orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
-    var output = "<div class='shout'><span class='speaker'>";
+    var output = "<div class='chat'><span class='speaker'>";
     output += snapshot.val().name;
-    output += ":</span> <span class='shoutContent'>";
+    output += ":</span> <span class='chatContent'>";
     output += snapshot.val().message;
     output += "</span></div>";
-    $(".shouts").append(output);
+    $(".chats").append(output);
   });
   
   
@@ -352,18 +352,18 @@ var config = {
       }
     });
   
-    $("#shoutForm").submit(function(event){
+    $("#chatForm").submit(function(event){
       event.preventDefault();
-      var message = $("#shoutMessage").val().trim();
-      $("#shoutMessage").val("");
-      var shoutUser;
+      var message = $("#chatMessage").val().trim();
+      $("#chatMessage").val("");
+      var chatUser;
       if(user.role==="player1") {
-        shoutUser = players.p1.name;
+        chatUser = players.p1.name;
       } else if (user.role==="player2") {
-        shoutUser = players.p2.name;
+        chatUser = players.p2.name;
       }
       database.ref("/chatbox").push({
-        name    : shoutUser,
+        name    : chatUser,
         message : message
       });
   
