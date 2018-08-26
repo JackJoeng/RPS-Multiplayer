@@ -6,6 +6,8 @@ This is an online multiplayer game, with the help of Firebase.
 
 ![](assets/images/readme.png)
 
+<a href="https://jackjoeng.github.io/RPSLS-Multiplayer">Check it out!</a>
+
 ### Assignment Instructions
 
 * Create a game that suits this user story:
